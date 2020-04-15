@@ -36,7 +36,7 @@ function GameBoyCore(canvas, ROMImage) {
 	this.remainingClocks = 0;					//HALT clocking overrun carry over.
 	this.inBootstrap = true;					//Whether we're in the GBC boot ROM.
 	this.usedBootROM = false;					//Updated upon ROM loading...
-	this.usedGBCBootROM = false;				//Did we boot to the GBC boot ROM?
+	this.usedGBCBootROM = true;				//Did we boot to the GBC boot ROM?
 	this.halt = false;							//Has the CPU been suspended until the next interrupt?
 	this.skipPCIncrement = false;				//Did we trip the DMG Halt bug?
 	this.stopEmulator = 3;						//Has the emulation been paused or a frame has ended?
@@ -63,7 +63,7 @@ function GameBoyCore(canvas, ROMImage) {
 	this.MBCRAMBanksEnabled = false;			//MBC RAM Access Control.
 	this.currMBCRAMBank = 0;					//MBC Currently Indexed RAM Bank
 	this.currMBCRAMBankPosition = -0xA000;		//MBC Position Adder;
-	this.cGBC = false;							//GameBoy Color detection.
+	this.cGBC = true;							//GameBoy Color detection.
 	this.gbcRamBank = 1;						//Currently Switched GameBoy Color ram bank
 	this.gbcRamBankPosition = -0xD000;			//GBC RAM offset from address start.
 	this.gbcRamBankPositionECHO = -0xF000;		//GBC RAM (ECHO mirroring) offset from address start.
@@ -8709,7 +8709,7 @@ GameBoyCore.prototype.registerWriteJumpCompile = function () {
 				}
 				parentObj.channel1ShadowFrequency = parentObj.channel1frequency;
 				//Reset frequency overflow check + frequency sweep type check:
-				parentObj.channel1SweepFault = false;
+				parentObj.channel1SweepFault = true;
 				//Supposed to run immediately:
 				parentObj.channel1AudioSweepPerformDummy();
 			}
