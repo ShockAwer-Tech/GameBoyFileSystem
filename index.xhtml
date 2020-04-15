@@ -46,8 +46,8 @@
         </div>
         <div id="about" class="window">
             <div id="about_message">
-                <h1>GameBoy Online</h1>
-                <p>This is a GameBoy Color emulator written purely in JavaScript by Grant Galitz.</p><p>The graphics blitting is done through HTML5 canvas, with the putImageData and drawImage functions.</p><p>Save states are implemented through the window.localStorage object, and are serialized/deserialized through JSON. SRAM saving is also implemented through the window.localStorage object, and are serialized/deserialized through JSON. In order for save states to work properly on most browsers, you need set the maximum size limit for DOM storage higher, to meet the needs of the emulator's save data size.</p><p>For more information about this emulator and its source code, visit the GIT repository at: <a href="https://github.com/taisel/GameBoy-Online" target="_blank">https://github.com/taisel/GameBoy-Online</a>.
+                <h1>Game Boy File System</h1>
+                <p>This is a half enchaned</p><p>The graphics blitting is done through HTML5 canvas, with the putImageData and drawImage functions.</p><p>Save states are implemented through the window.localStorage object, and are serialized/deserialized through JSON. SRAM saving is also implemented through the window.localStorage object, and are serialized/deserialized through JSON. In order for save states to work properly on most browsers, you need set the maximum size limit for DOM storage higher, to meet the needs of the emulator's save data size.</p><p>For more information about this emulator and its source code, visit the GIT repository at: <a href="https://github.com/taisel/GameBoy-Online" target="_blank">https://github.com/taisel/GameBoy-Online</a>.
                 </p>
             </div>
             <div class="button_rack">
@@ -61,7 +61,7 @@
                     <input type="checkbox" checked="checked" id="enable_sound"/>
                 </div>
                 <div class="setting">
-                    <span>GB mode has priority over GBC mode:</span>
+                    <span>Play without color</span>
                     <input type="checkbox" id="disable_colors"/>
                 </div>
                 <div class="setting">
@@ -187,7 +187,7 @@
                 <li id="data_uri_clicker">Base 64 Encoding</li>
                 <li id="internal_file_clicker">Local File</li>
             </ul></li>
-            <li id="save_SRAM_state_clicker">Save Game Memory</li>
+            <li id="save_SRAM_state_clicker">Save SRAM</li>
             <li id="save_state_clicker">Save Freeze State</li>
             <li id="set_volume">Set Volume</li>
             <li id="set_speed">Set Speed</li>
